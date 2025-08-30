@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harmony Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Updated Font Awesome CDN -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="player-container">
+
+        <!-- Main Player Area -->
+        <div class="player-main">
+            <div class="album-art">
+                <img src="defult.jpg" alt="Album Art" class="album-image" />
+            </div>
+
+            <h2 class="song-title">Unknown Song</h2>
+            <p class="song-artist">Unknown Artist</p>
+
+            <!-- Extra Controls Top -->
+            <div class="top-controls">
+                <button class="btn lyrics"><i class="fas fa-align-left"></i></button>
+                <button class="btn like"><i class="fas fa-heart"></i></button>
+                <button class="btn download"><i class="fas fa-download"></i></button>
+                <button class="btn queue"><i class="fas fa-list"></i></button>
+                <button class="btn device"><i class="fas fa-laptop"></i></button>
+                <button class="btn fullscreen"><i class="fas fa-expand"></i></button>
+            </div>
+
+            <button class="btn play">
+                <i class="fas fa-play"></i>
+                <span class="sr-only">Play</span>
+            </button>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <span class="current-time">0:00</span>
+                <input type="range" class="progress-bar" value="0" />
+                <span class="duration">0:00</span>
+            </div>
+
+            <!-- Playback Controls -->
+            <div class="controls">
+                <button class="btn shuffle"><i class="fas fa-random"></i></button>
+                <button class="btn prev"><i class="fas fa-backward"></i></button>
+                <button class="btn play"><i class="fas fa-play"></i></button>
+                <button class="btn next"><i class="fas fa-forward"></i></button>
+                <button class="btn repeat"><i class="fas fa-redo"></i></button>
+            </div>
+
+            <!-- Volume & Equalizer -->
+            <div class="bottom-controls">
+                <div class="volume-control">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" min="0" max="1" step="0.01" value="1" />
+                </div>
+                <button class="btn equalizer"><i class="fas fa-sliders-h"></i></button>
+            </div>
+        </div>
+
+        <!-- Playlist Sidebar -->
+        <div class="playlist-sidebar">
+            <div class="playlist-header">
+                <h3>Playlist</h3>
+                <div class="search-add">
+                    <input type="text" placeholder="Search songs..." class="search-box" />
+                    <button class="btn add"><i class="fas fa-plus"></i></button>
+                    <input type="file" id="songUploader" accept="audio/*" multiple>
+                </div>
+            </div>
+            <div class="playlist-items">
+                <!-- Dynamically loaded songs -->
+            </div>
+        </div>
+
+        <!-- Song Upload Form -->
+        <!-- <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="song" accept=".mp3" required>
+            
+        </form> -->
+
+        <ul id="playlist"></ul>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
